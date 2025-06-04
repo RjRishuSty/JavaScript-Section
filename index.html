@@ -18,14 +18,14 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .quantity-controls {
+    .controls {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 15px;
       margin: 20px 0;
     }
-    .quantity-controls button {
+    .controls button {
       padding: 10px 20px;
       font-size: 20px;
       cursor: pointer;
@@ -45,7 +45,7 @@
 
   <div class="container">
     <h2>Product Price: ₹299</h2>
-    <div class="quantity-controls">
+    <div class="controls">
       <button onclick="decrease()">–</button>
       <div class="quantity-display" id="quantity">1</div>
       <button onclick="increase()">+</button>
@@ -54,12 +54,12 @@
   </div>
 
   <script>
-    const unitPrice = 299;
+    const defaultPrice = 299;
     let quantity = 1;
 
     function updateUI() {
       document.getElementById('quantity').innerText = quantity;
-      document.getElementById('total').innerText = quantity * unitPrice;
+      document.getElementById('total').innerText = quantity * defaultPrice;
     }
 
     function increase() {
