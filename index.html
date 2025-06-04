@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: inline-block;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .quantity-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .quantity-controls button {
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .quantity-display {
+      font-size: 24px;
+      min-width: 30px;
+    }
+    .total {
+      font-size: 20px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Product Price: ₹299</h2>
+    <div class="quantity-controls">
+      <button onclick="decrease()">–</button>
+      <div class="quantity-display" id="quantity">1</div>
+      <button onclick="increase()">+</button>
+    </div>
+    <div class="total">Total: ₹<span id="total">299</span></div>
+  </div>
+
+  <script>
+    const unitPrice = 299;
+    let quantity = 1;
+
+    function updateUI() {
+      document.getElementById('quantity').innerText = quantity;
+      document.getElementById('total').innerText = quantity * unitPrice;
+    }
+
+    function increase() {
+      if (quantity < 5) {
+        quantity++;
+        updateUI();
+      }
+    }
+
+    function decrease() {
+      if (quantity > 1) {
+        quantity--;
+        updateUI();
+      }
+    }
+  </script>
+</body>
+</html>
