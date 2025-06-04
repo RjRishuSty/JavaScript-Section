@@ -1,9 +1,9 @@
 const cart = [199, 299, 499];
 
-function calculateTotal(cart) {
-  const total = cart.reduce((sum, price) => sum + price, 0);
+function calculateAmount(cart) {
+  const total = cart.reduce((accumulator, currentPrice) => accumulator + currentPrice, 0);
   return total;
 }
 
-const totalPrice = calculateTotal(cart);
+const totalPrice = calculateAmount(cart);
 console.log("Total =", totalPrice);
